@@ -1,7 +1,7 @@
 <?php
 
 $extensions = array('png', 'gif','jpg','jpeg');
-$files = '../src/uploads/';
+$files = 'src/uploads/';
 if (isset($_POST['upload'])) {
 
     if (count($_FILES['fichier']['name']) > 0) {
@@ -58,7 +58,7 @@ if (isset($_POST['upload'])) {
             </div>
             <div class="row">
                 <?php
-                    $files = '../src/uploads/';
+                    $files = 'src/uploads/';
                     $photos = new FilesystemIterator($files);
                     foreach ($photos as $file){
                         echo
@@ -67,7 +67,7 @@ if (isset($_POST['upload'])) {
                         <img src="'.$files.$file->getFilename().'" alt="">
                         <div class="caption">
                                  <p>'.$file->getFilename().'</p>
-                                 <form action="../src/delete.php" method="get">
+                                 <form action="src/delete.php" method="get">
                                         <input type="hidden" name="delete" value="'.$file->getFilename();echo'">
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                  </form>
